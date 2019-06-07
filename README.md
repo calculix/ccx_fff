@@ -16,3 +16,8 @@ Default usage is:
 Also you can explicitly point existing folder names to process:
 
     python3 free_form_fortran.py original_sources_dir converted_sources_dir
+
+
+#TODO
+
+- Check comments in initialconditionss.f
