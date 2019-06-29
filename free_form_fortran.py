@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, UJV Rez, June 2019.
+    © Ihor Mirzov, June 2019.
     Distributed under GNU General Public License, version 2.
 
     Converts old Calculix 2.15 Fortran 77 code to the one with free form.
