@@ -3,7 +3,7 @@
 
 """
     © Ihor Mirzov, June 2019.
-    Distributed under GNU General Public License, version 2.
+    Distributed under GNU General Public License v3.0
 
     Converts old Calculix 2.15 Fortran 77 code to the one with free form.
     Shifts comments and continuation marks for better code folding.
