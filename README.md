@@ -1,4 +1,4 @@
-© Ihor Mirzov, May 2019.  
+© Ihor Mirzov, May 2019  
 Distributed under GNU General Public License v3.0
 
 <br/><br/>
@@ -37,7 +37,7 @@ Also you can explicitly point existing folder names to process:
 
 - Simply use this software and ask questions.
 - Share your models and screenshots.
-- Report problems by [posting issues](./issues).
+- Report problems by [posting issues](https://github.com/imirzov/ccx_free_form_fortran/issues).
 - Do something from the [TODO-list](#TODO).
 
 <br/><br/>
