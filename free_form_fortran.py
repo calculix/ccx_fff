@@ -2,19 +2,20 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, June 2019.
+    © Ihor Mirzov, December 2019.
     Distributed under GNU General Public License v3.0
 
-    Converts old Calculix 2.15 Fortran 77 code to the one with free form.
+    Converts Calculix 2.16 old Fortran 77 code to the one with free form.
     Shifts comments and continuation marks for better code folding.
     Compiles all fortran sources with -ffree-form flag.
     Takes files to be compiled from Makefile.inc.
 
-    The script will process sources from folder './ccx_2.15_original_fortran/'
-    and put them into './ccx_2.15_converted_fortran/'. So, default usage is:
+    Default usage is:
         python3 free_form_fortran.py
 
-    Also you can explicitly point existing folder names to process:
+    The script will process sources from folder 'ccx_2.16'
+    and put them into 'ccx_2.16_ffree_form'. Also you can
+    explicitly point existing folders to process:
         python3 free_form_fortran.py original_sources_dir converted_sources_dir
 """
 
@@ -89,11 +90,11 @@ def process(file_name, original_sources_dir, converted_sources_dir):
                 else:
                     lines[i] = lines[i][:71].rstrip() + '\n'
 
-        # Exclusion for linscal.f, linvec.f, lintemp.f, lintemp_th.f
+        # Exclusion for linscal.f, linvec.f, lintemp*.f
         if ('linscal.f' in file_name) \
             or ('linvec.f' in file_name) \
             or ('lintemp.f' in file_name) \
-            or ('lintemp_th.f' in file_name) \
+            or ('lintemp_th' in file_name) \
             or ('shape8hr.f' in file_name) \
             or ('umat_single_crystal.f' in file_name) \
             or ('umat_single_crystal_creep.f' in file_name):
@@ -148,7 +149,7 @@ def process(file_name, original_sources_dir, converted_sources_dir):
         match = re.match('^\s+', lines[i-1])
         if match and not lines[i-1].lstrip().startswith('!'):
             shift = len(match.group(0))
-        if 'subroutine' in lines[i-1]:
+        if lines[i-1].lstrip().startswith('subroutine'):
             shift = 0
 
         if lines[i-1].lstrip().startswith('!'):
@@ -161,16 +162,19 @@ def process(file_name, original_sources_dir, converted_sources_dir):
 
 
 if (__name__ == '__main__'):
-    # Clean screen
-    os.system('cls' if os.name=='nt' else 'clear')
 
     # Path to folders
     try:
         original_sources_dir = sys.argv[-2] + '/'
         converted_sources_dir = sys.argv[-1] + '/'
     except:
-        original_sources_dir = './ccx_2.15_original_fortran/'
-        converted_sources_dir = './ccx_2.15_converted_fortran/'
+        original_sources_dir = './ccx_2.16/'
+        converted_sources_dir = './ccx_2.16_ffree_form/'
+    if not os.path.isdir(converted_sources_dir):
+        os.mkdir(converted_sources_dir)
+
+    # Clean screen
+    os.system('cls' if os.name=='nt' else 'clear')
 
     # Copy non-fortran files
     nonfortran_file_list = [os.path.basename(f) \
