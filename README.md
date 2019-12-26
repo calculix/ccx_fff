@@ -33,6 +33,14 @@ Also you can explicitly point existing folders to process:
 
 
 
+# Downloads
+
+Converted and compiled sources together with original one could be found on [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
+
+<br/><br/>
+
+
+
 # Your help
 
 - Simply use this software and ask questions.
