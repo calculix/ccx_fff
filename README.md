@@ -5,7 +5,7 @@ Distributed under GNU General Public License v3.0
 
 
 
-# Fortran code converter for Calculix 2.15
+# Fortran code converter for Calculix 2.16
 
 Converts old Calculix Fortran 77 code to the one with free form. Shifts comments and continuation marks for better code folding. Compiles all fortran sources with -ffree-form flag. Takes files to be compiled from Makefile.inc. The script will process sources from folder *ccx_2.16* and put them into *ccx_2.16_ffree_form*. Now those sources are ready for the *make* command. Refer to the official manual instructions how to build. To understand the difference in sources see images below.
 
