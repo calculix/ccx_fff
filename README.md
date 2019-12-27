@@ -1,5 +1,5 @@
 © Ihor Mirzov, December 2019  
-Distributed under GNU General Public License v3.0
+Distributed under GNU General Public License v3.0  
 Libraries ARPACK and SPOOLES have their own licenses
 
 <br/><br/>
@@ -39,12 +39,6 @@ Also you can explicitly point existing folders to process:
 
     python3 free_form_fortran.py original_sources_dir converted_sources_dir
 
-All sources are already compiled and built with multithreading. So you can start using CalculiX binaries:
-
-    - ccx_2.16/ccx_2.16_MT
-
-    - ccx_2.16_ffree_form/ccx_2.16_MT
-
 <br/><br/>
 
 
@@ -68,11 +62,17 @@ Release version of converted and compiled sources together with original one cou
 
 # How to compile CalculiX
 
+Everything described below is already done: sources are compiled and built with multithreading. So you can start using CalculiX binaries:
+
+    - ccx_2.16/ccx_2.16_MT
+
+    - ccx_2.16_ffree_form/ccx_2.16_MT
+
 <br/><br/>
 
 
 
-## Get the prerequisite ARPACK:
+## How to compile ARPACK:
 
     wget http://www.caam.rice.edu/software/ARPACK/SRC/arpack96.tar.gz
 
@@ -120,7 +120,7 @@ Now you have ARPACK/libarpack_INTEL.a
 
 
 
-## Get the prerequisite SPOOLES
+## How to compile SPOOLES
 
 Download Spooles:
 
@@ -150,7 +150,7 @@ Now we have SPOOLES.2.2/spools.a and SPOOLES.2.2/MT/src/spoolesMT.a
 
 
 
-## Compile CalculiX
+## Now compile CalculiX
 
     cd ./ccx_free_form_fortran/ccx_2.16_ffree_form
 
@@ -158,7 +158,7 @@ Edit "Makefile_MT":
 
 - Add "-DUSE_MT=1" to the CFLAGS.
 
-- Add "-ffree-form" to the FFLAGS. It'll remove fixed width of the code lines. So now continuation symbol (&) could be placed in the end of strings, and code folding will work much better.
+- Add "-ffree-form" to the FFLAGS. It'll remove fixed width of the code lines. So now continuation symbol *'&'* could be placed in the end of strings, and code folding will work much better.
 
 - Change the compiler version "CC=cc".
 
