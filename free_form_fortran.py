@@ -201,7 +201,7 @@ if (__name__ == '__main__'):
             if os.path.isfile(file_name) \
                 and not os.path.isfile(file_name[:-2]+'.o'): # skip already compiled files
                 try:
-                    os.system('gfortran -Wall -O3 -fopenmp -ffree-form -c ' + file_name)
+                    os.system('gfortran -Wall -O2 -fopenmp -ffree-form -c ' + file_name)
                 except:
                     break
 
