@@ -1,5 +1,7 @@
 
-CFLAGS = -Wall -O2  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
+DIR=../SPOOLES.2.2
+
+CFLAGS = -Wall -O2 -I $(DIR) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
 FFLAGS = -Wall -O2 
 
 CC=cc
@@ -18,11 +20,9 @@ OCCXF = $(SCCXF:.f=.o)
 OCCXC = $(SCCXC:.c=.o)
 OCCXMAIN = $(SCCXMAIN:.c=.o)
 
-DIR=../../../SPOOLES.2.2
-
 LIBS = \
        $(DIR)/spooles.a \
-	../../../ARPACK/libarpack_INTEL.a \
+	../ARPACK/libarpack_INTEL.a \
        -lpthread -lm -lc
 
 ccx_2.16: $(OCCXMAIN) ccx_2.16.a  $(LIBS)

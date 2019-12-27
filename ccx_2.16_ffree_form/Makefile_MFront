@@ -1,7 +1,9 @@
 # for debuggin purposes -DCALCULIX_EXTERNAL_BEHAVIOUR_DEBUG
 
-CFLAGS = -Wall -O3  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DCALCULIX_EXTERNAL_BEHAVIOURS_SUPPORT -fPIC -DPIC -O2
-FFLAGS = -Wall -O3 -fopenmp -fPIC -DPIC
+DIR=../SPOOLES.2.2
+
+CFLAGS = -Wall -O3  -I $(DIR) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DCALCULIX_EXTERNAL_BEHAVIOURS_SUPPORT -fPIC -DPIC -O2
+FFLAGS = -Wall -O3 -fopenmp -fPIC -DPIC -ffree-form
 
 CC=cc
 FC=gfortran
@@ -19,10 +21,8 @@ OCCXF = $(SCCXF:.f=.o)
 OCCXC = $(SCCXC:.c=.o)
 OCCXMAIN = $(SCCXMAIN:.c=.o)
 
-DIR=../../../SPOOLES.2.2
-
 LIBS = $(DIR)/spooles.a \
-     ../../../ARPACK/libarpack_INTEL.a \
+     ../ARPACK/libarpack_INTEL.a \
      -lblas    \
      -lpthread -lm -lc -ldl
 
