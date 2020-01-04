@@ -1,4 +1,4 @@
-© Ihor Mirzov, December 2019  
+© Ihor Mirzov, January 2020  
 Distributed under GNU General Public License v3.0  
 Libraries ARPACK and SPOOLES have their own licenses
 
@@ -6,10 +6,15 @@ Libraries ARPACK and SPOOLES have their own licenses
 
 
 
-[How to use](#how-to-use) |
+---
+
 [Downloads](#downloads) |
+[How to use](#how-to-use) |
+[Screenshots](#screenshots) |
 [Your help](#your-help) |
 [How to compile CalculiX](#how-to-compile-calculix)
+
+---
 
 <br/><br/>
 
@@ -17,13 +22,15 @@ Libraries ARPACK and SPOOLES have their own licenses
 
 # Fortran code converter for CalculiX 2.16
 
-Converts old CalculiX Fortran 77 code to the one with free form. Shifts comments and continuation marks for better code folding. Compiles all fortran sources with -ffree-form flag. Takes files to be compiled from Makefile.inc. The script will process sources from folder *ccx_2.16* and put them into *ccx_2.16_ffree_form*. Now those sources are ready for the *make* command. Refer to the official manual instructions how to build. To understand the difference in sources see images below.
+Converts old CalculiX Fortran 77 code to the one with free form. Shifts comments and continuation marks for better code folding. Compiles all fortran sources with -ffree-form flag. Takes files to be compiled from Makefile.inc. The script will process sources from folder *ccx_2.16* and put them into *ccx_2.16_ffree_form*. Now those sources are ready for the *make* command. Refer to the official manual instructions how to build. To understand the difference in sources see [screenshots](#screenshots).
 
-Before conversion:  
-![before conversion](img_original.png "before conversion")
+<br/><br/>
 
-After conversion - code folding works like a charm:  
-![after conversion](img_converted.png "after conversion")
+
+
+# Downloads
+
+Release version of converted and compiled sources together with original one could be found on [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
 
 <br/><br/>
 
@@ -43,9 +50,13 @@ Also you can explicitly point existing folders to process:
 
 
 
-# Downloads
+# Screenshots
 
-Release version of converted and compiled sources together with original one could be found on [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
+Before conversion:  
+![before conversion](img_original.png "before conversion")
+
+After conversion - code folding works like a charm:  
+![after conversion](img_converted.png "after conversion")
 
 <br/><br/>
 
