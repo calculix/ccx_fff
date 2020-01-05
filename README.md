@@ -11,8 +11,7 @@ Libraries ARPACK and SPOOLES have their own licenses
 [Downloads](#downloads) |
 [How to use](#how-to-use) |
 [Screenshots](#screenshots) |
-[Your help](#your-help) |
-[How to compile CalculiX](#how-to-compile-calculix)
+[Your help](#your-help)
 
 ---
 
