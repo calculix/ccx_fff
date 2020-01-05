@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, December 2019.
+    © Ihor Mirzov, January 2020.
     Distributed under GNU General Public License v3.0
 
     Converts Calculix 2.16 old Fortran 77 code to the one with free form.
@@ -28,7 +28,8 @@ def process(file_name, original_sources_dir, converted_sources_dir):
     print(file_name)
 
     # Read file
-    with open(original_sources_dir+file_name, 'r', encoding='Windows-1252') as f:
+    with open(os.path.join(original_sources_dir, file_name),
+            'r', encoding='Windows-1252') as f:
         lines = f.readlines()
 
     # Simple replacements
@@ -156,20 +157,28 @@ def process(file_name, original_sources_dir, converted_sources_dir):
             lines[i-1] = ' '*shift + lines[i-1].strip() + '\n'
 
     # Write file
-    with open(converted_sources_dir+file_name, 'w', encoding='Windows-1252') as f:
+    with open(os.path.join(converted_sources_dir, file_name),
+            'w', encoding='Windows-1252') as f:
         for line in lines:
             f.write(line)
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
 
     # Path to folders
     try:
         original_sources_dir = sys.argv[-2] + '/'
         converted_sources_dir = sys.argv[-1] + '/'
+
     except:
-        original_sources_dir = './ccx_2.16/'
-        converted_sources_dir = './ccx_2.16_ffree_form/'
+        # OS name
+        if os.name=='nt':
+            op_sys = 'ccx_windows'
+        else:
+            op_sys = 'ccx_linux'
+
+        original_sources_dir = 'ccx_2.16'
+        converted_sources_dir = os.path.join(op_sys, 'ccx_2.16_ffree_form')
     if not os.path.isdir(converted_sources_dir):
         os.mkdir(converted_sources_dir)
 
@@ -178,13 +187,16 @@ if (__name__ == '__main__'):
 
     # Copy non-fortran files
     nonfortran_file_list = [os.path.basename(f) \
-        for f in os.listdir(original_sources_dir) if not f.endswith('.f') ]
+                            for f in os.listdir(original_sources_dir)
+                            if not f.endswith('.f')]
     for file_name in sorted(nonfortran_file_list):
-        shutil.copy(original_sources_dir+file_name, converted_sources_dir+file_name)
+        shutil.copy(os.path.join(original_sources_dir, file_name),
+                    os.path.join(converted_sources_dir, file_name))
 
     # Process fortran files
     fortran_file_list = [os.path.basename(f) \
-        for f in os.listdir(original_sources_dir) if f.endswith('.f') ]
+                        for f in os.listdir(original_sources_dir)
+                        if f.endswith('.f') ]
     for file_name in sorted(fortran_file_list):
         process(file_name, original_sources_dir, converted_sources_dir)
         # break # one file only
@@ -200,9 +212,9 @@ if (__name__ == '__main__'):
             file_name = match.group(0)
             if os.path.isfile(file_name) \
                 and not os.path.isfile(file_name[:-2]+'.o'): # skip already compiled files
-                try:
-                    os.system('gfortran -Wall -O2 -fopenmp -ffree-form -c ' + file_name)
-                except:
-                    break
+                # try:
+                os.system('gfortran -Wall -O2 -fopenmp -ffree-form -c ' + file_name)
+                # except:
+                #     break
 
 print('END')
