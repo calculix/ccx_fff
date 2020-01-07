@@ -1,6 +1,6 @@
 © Ihor Mirzov, January 2020  
 Distributed under GNU General Public License v3.0  
-Libraries ARPACK and SPOOLES have their own licenses
+CalculiX, libraries ARPACK and SPOOLES have their own licenses
 
 <br/><br/>
 
@@ -23,17 +23,14 @@ Libraries ARPACK and SPOOLES have their own licenses
 
 Converts old CalculiX Fortran 77 code to the one with free form. Shifts comments and continuation marks for better code folding. Compiles all Fortran sources with *-ffree-form* flag. Takes files to be compiled from *Makefile.inc*. To understand the difference in sources see [screenshots](#screenshots).
 
-The script has already converted sources from folder *ccx_2.16* and put them into:
+The script has already converted original CalculiX sources from folder *ccx_2.16* and put them into:
 
-- ccx_linux/ccx_2.16_ffree_form
-- ccx_windows/ccx_2.16_ffree_form
+- [ccx_linux/ccx_2.16_ffree_form](./ccx_linux/ccx_2.16_ffree_form)
+- [ccx_windows/ccx_2.16_ffree_form](./ccx_windows/ccx_2.16_ffree_form)
 
 Also those folders include compiled ARPACK and SPOOLES libraries.
 
-Converted CalculiX sources are compiled and built with Makefile_MT:
-
-- [ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT](./ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT)
-- [ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe](./ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe)
+Converted CalculiX sources are compiled and built with Makefile_MT [for Linux](./ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT) and [for Windows](./ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe).
 
 <br/><br/>
 
@@ -41,7 +38,7 @@ Converted CalculiX sources are compiled and built with Makefile_MT:
 
 # Downloads
 
-Release version of binaries, converted and compiled sources together with original code could be found on [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
+Release version of binaries, converted and compiled sources together with original code could be downloaded from [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
 
 <br/><br/>
 
