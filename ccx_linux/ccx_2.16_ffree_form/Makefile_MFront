@@ -3,7 +3,7 @@
 DIR=../SPOOLES.2.2
 
 CFLAGS = -Wall -O3  -I $(DIR) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DCALCULIX_EXTERNAL_BEHAVIOURS_SUPPORT -fPIC -DPIC -O2
-FFLAGS = -Wall -O3 -fopenmp -fPIC -DPIC
+FFLAGS = -Wall -O3 -fopenmp -fPIC -DPIC -ffree-form
 
 CC=cc
 FC=gfortran

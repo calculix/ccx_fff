@@ -32,8 +32,8 @@ Also those folders include compiled ARPACK and SPOOLES libraries.
 
 Converted CalculiX sources are compiled and built with Makefile_MT:
 
-- ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT
-- ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe
+- [ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT](./ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT)
+- [ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe](./ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe)
 
 <br/><br/>
 

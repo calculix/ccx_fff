@@ -2,7 +2,7 @@
 DIR=../SPOOLES.2.2
 
 CFLAGS = -Wall -O2 -I $(DIR) -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DNETWORKOUT
-FFLAGS = -Wall -O2 
+FFLAGS = -Wall -O2 -ffree-form
 
 CC=cc
 FC=gfortran

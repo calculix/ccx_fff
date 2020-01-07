@@ -214,7 +214,8 @@ if __name__ == '__main__':
                 and not os.path.isfile(file_name[:-2]+'.o'): # skip already compiled files
                 # try:
                 os.system('gfortran -Wall -O2 -fopenmp -ffree-form -c ' + file_name)
-                # except:
+                # except Exception as e:
+                #     print(str(e.__traceback__))
                 #     break
 
 print('END')
