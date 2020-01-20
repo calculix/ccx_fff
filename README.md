@@ -30,7 +30,7 @@ The script has already converted original CalculiX sources from folder *ccx_2.16
 
 Also those folders include compiled ARPACK and SPOOLES libraries.
 
-Converted CalculiX sources are compiled and built with Makefile_MT [for Linux](./ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT) and [for Windows](./ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe).
+Converted CalculiX sources are compiled with multithreading using Makefile_MT.
 
 <br/><br/>
 
@@ -39,6 +39,13 @@ Converted CalculiX sources are compiled and built with Makefile_MT [for Linux](.
 # Downloads
 
 Release version of binaries, converted and compiled sources together with original code could be downloaded from [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
+
+Compiled with multithreading CalculiX CrunchiX binary is here:
+
+- [for Linux](./ccx_linux/ccx_2.16_ffree_form/ccx_2.16_MT)
+- [for Windows](./ccx_windows/ccx_2.16_ffree_form/ccx_2.16_MT.exe)
+
+Windows version may need [Cygwin dlls](cygwin_dlls.zip) to be placed in a working directory to run a calculation.
 
 <br/><br/>
 
