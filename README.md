@@ -19,18 +19,18 @@ CalculiX, libraries ARPACK and SPOOLES have their own licenses
 
 
 
-# Fortran code converter for CalculiX 2.16
+# Fortran code converter for CalculiX CrunchiX 2.16
 
 Converts old CalculiX Fortran 77 code to the one with free form. Shifts comments and continuation marks for better code folding. Compiles all Fortran sources with *-ffree-form* flag. Takes files to be compiled from *Makefile.inc*. To understand the difference in sources see [screenshots](#screenshots).
 
-The script has already converted original CalculiX sources from folder *ccx_2.16* and put them into:
+The script has already converted original CalculiX CrunchiX sources from folder *ccx_2.16* and put them into:
 
 - [ccx_linux/ccx_2.16_ffree_form](./ccx_linux/ccx_2.16_ffree_form)
 - [ccx_windows/ccx_2.16_ffree_form](./ccx_windows/ccx_2.16_ffree_form)
 
 Also those folders include compiled ARPACK and SPOOLES libraries.
 
-Converted CalculiX sources are compiled with multithreading using Makefile_MT.
+Converted CalculiX CrunchiX sources are compiled with multithreading using Makefile_MT.
 
 <br/><br/>
 
@@ -38,7 +38,7 @@ Converted CalculiX sources are compiled with multithreading using Makefile_MT.
 
 # Downloads
 
-Release version of binaries, converted and compiled sources together with original code could be downloaded from [the releases page](https://github.com/imirzov/ccx_free_form_fortran/releases).
+Release version of binaries, converted and compiled sources together with original code could be downloaded from [the releases page](https://github.com/calculix/free_form_fortran/releases).
 
 Compiled with multithreading CalculiX CrunchiX binary is here:
 
@@ -80,4 +80,4 @@ After conversion - code folding works like a charm:
 # Your help
 
 - Simply use this software and ask questions.
-- Report problems by [posting issues](https://github.com/imirzov/ccx_free_form_fortran/issues).
+- Report problems by [posting issues](https://github.com/calculix/free_form_fortran/issues).
